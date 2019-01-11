@@ -10,6 +10,8 @@ public interface Rovers {
 
     Photos getPhotos(RoverName roverName, Integer sol, CameraName camera);
 
+    Photos getPhotos(RoverName roverName, Integer sol, CameraName camera, Integer page);
+
     List<CameraName> getAllCameraNames();
 
     List<RoverName> getAllRoverNames();

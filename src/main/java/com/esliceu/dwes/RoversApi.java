@@ -28,10 +28,15 @@ public class RoversApi implements Rovers {
     }
 
     public Photos getPhotos(RoverName roverName, Integer sol, CameraName camera){
+       return getPhotos(roverName,sol,camera,null);
 
+    }
+
+    public Photos getPhotos(RoverName roverName, Integer sol, CameraName camera, Integer page) {
         StringBuilder url = new StringBuilder();
         url.append(MessageFormat.format(urlBase,roverName.toString().toLowerCase(),sol,apiKey));
         if (camera != null) url.append("&camera=").append(camera.name());
+        if (page != null) url.append("&page=").append(page);
 
         return restTemplate.getForObject(url.toString(), Photos.class);
     }

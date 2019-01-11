@@ -12,4 +12,8 @@ public class Photos {
     public void setPhotos(List<Photo> photos) {
         this.photos = photos;
     }
+
+    public Integer getSize(){
+        return photos.size();
+    }
 }
